@@ -76,9 +76,17 @@ button {
     outline: none;
     background-color: var(--main-background-color-button);
     color: white;
+    cursor: pointer;
+}
+button.white {
+    background-color: transparent;
+    border: 1px solid white;
 }
 button:hover {
     background-color: var(--hover-main-background-color-button);
+}
+button.white:hover {
+    background-color: rgba(255, 255, 255, 0.231);
 }
 button a {
     color: white;
@@ -269,7 +277,7 @@ button a {
     display: block;
     max-width: 400px;
     z-index: 5;
-    transition: opacity 2s 4s;
+    transition: opacity 2s 3s;
 }
 .landing .container span.display {
     opacity: 1;
@@ -279,7 +287,7 @@ button a {
 }
 .landing .container button {
     opacity: 0;
-    transition: opacity 2s 4s;
+    transition: opacity 2s 3s;
 }
 .landing .container button.display {
     opacity: 1;
@@ -294,7 +302,7 @@ button a {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    transition: bottom 2s 5.5s;
+    transition: bottom 1.5s 4s;
 }
 .landing .transform-section.display {
     bottom: 50px;
@@ -493,3 +501,82 @@ button a {
     margin-top: 15px;
 }
 /* End Section Three */
+/* Start Section Four  */
+.four {
+    position: relative;
+    padding: 100px 0;
+    background-image: url(../image/banner.jpg);
+    background-size: cover;
+}
+.four::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.594);
+}
+.four .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.four .container .info {
+    color: white;
+    max-width: 450px;
+}
+.four .container .info p {
+    margin-top: 15px;
+    word-spacing: 3px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 1.4;
+}
+.four .container .button {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 300px;
+}
+.four .container .button button {
+    width: 100%;
+}
+/* End Section Four  */
+/* Start Section Footer  */
+.footer {
+    padding: 100px;
+    background-color: #20252a;
+    text-align: center;
+}
+.footer .container ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.footer .container ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+.footer .container ul li a:hover {
+    color: white;
+}
+.footer .container ul li a i {
+    font-size: 22px;
+}
+.footer .container span {
+    display: block;
+    margin-top: 40px;
+    letter-spacing: 1.4px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.footer .container span a {
+    color: rgba(255, 255, 255, 0.5);
+}
+.footer .container span a:hover {
+    color: rgb(255, 255, 255);
+}
+/* End Section Footer  */
