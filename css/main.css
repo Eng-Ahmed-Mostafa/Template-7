@@ -16,6 +16,8 @@
 }
 body {
     background-color: var(--main-background-color);
+    font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 .container {
     width: 600px;
@@ -46,6 +48,7 @@ h1 {
     font-size: 30px;
     color: white;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 h1 + span {
     display: block;
@@ -59,32 +62,48 @@ h1 + span {
     letter-spacing: 3px;
 }
 h2 {
+    text-transform: uppercase;
     font-size: 24px;
     line-height: 1.6;
     letter-spacing: 4px;
 }
 h3 {
-    font-size: 22px;
+    text-transform: uppercase;
+    font-size: 18px;
     line-height: 1.6;
     letter-spacing: 4px;
+}
+p {
+    line-height: 1.6;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    font-size: 18px;
 }
 button {
     padding: 10px 25px;
     border-radius: 1px;
-    text-transform: uppercase;
+    text-transform: uppercase !important;
     border: none;
     outline: none;
     background-color: var(--main-background-color-button);
     color: white;
     cursor: pointer;
+    border: 1px solid var(--main-background-color-button);
+    letter-spacing: 2px;
 }
 button.white {
     background-color: transparent;
     border: 1px solid white;
 }
+button.white-background {
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #000;
+}
 button:hover {
     background-color: var(--hover-main-background-color-button);
 }
+button.white-background:hover,
 button.white:hover {
     background-color: rgba(255, 255, 255, 0.231);
 }
@@ -151,19 +170,22 @@ button a {
 }
 .content-menu ul li {
     position: relative;
-    margin: 20px 0;
+    margin: 30px 0;
     color: white;
 }
 .content-menu ul li:not(:last-child)::before {
     content: "";
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     width: 100%;
     height: 1px;
+    opacity: .7;
     background-color: #5555555c;
 }
 .content-menu ul li a {
     cursor: pointer;
+    color: white;
+    text-decoration: none;
 }
 /* End Content menu  */
 /* Start header bar  */
@@ -179,18 +201,22 @@ button a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 63px;
+    height: 53;
+    max-height: 53px;
     transition: .3s;
 }
-.bar.display {
+.bar.display,
+.bar#display {
     background-color: var(--main-background-color);
 }
+
 .bar h2 {
     opacity: 0;
     font-size: 20px;
     transition: .3s;
 }
-.bar.display h2 {
+.bar.display h2, 
+.bar#display h2 {
     opacity: 1;
 }
 .bar .menu {
@@ -275,7 +301,7 @@ button a {
     opacity: 0;
     margin: 0 auto;
     display: block;
-    max-width: 400px;
+    max-width: 350px;
     z-index: 5;
     transition: opacity 2s 3s;
 }
@@ -580,3 +606,427 @@ button a {
     color: rgb(255, 255, 255);
 }
 /* End Section Footer  */
+/* Start Generic page  */
+/* Start landing  */
+.landing-generic {
+    position: relative;
+    padding: 200px 0;
+    text-align: center;
+    background-image: url(../image/banner.jpg);
+    background-size: cover;
+}
+.landing-generic::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.594);
+}
+.landing-generic .container {
+    position: relative;
+}
+/* End landing  */
+/* Start Content Text  */
+.content-text {
+    padding: 100px 0;
+    color: #000;
+    background-color: white;
+}
+.content-text .box {
+    position: relative;
+}
+.content-text .box:not(:last-child) {
+    margin-bottom: 60px;
+}
+.content-text .box:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #555;
+}
+.content-text .box p {
+    margin-top: 20px;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    font-size: 18px;
+}
+/* End Content Text  */
+/* End Generic page  */
+/* Start Elements Page  */
+/* Start Landing  */
+.landing-elements {
+    position: relative;
+    padding: 200px 0;
+    text-align: center;
+    background-image: url(../image/banner.jpg);
+    background-size: cover;
+}
+.landing-elements::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.594);
+}
+.landing-elements .container {
+    position: relative;
+}
+/* Emd Landing  */
+/* Start Content  */
+.background-white {
+    padding: 100px 0;
+    background-color: white;
+}
+.background-white .text {
+    position: relative;
+    margin-bottom: 60px;
+}
+.background-white .text::before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #555;
+}
+.background-white .text code {
+    padding: 2px 4px;
+    background-color: #f5f5f5;
+}
+.background-white .text h3 {
+    font-size: 20px;
+}
+.background-white .text p:not(:last-child) {
+    margin-bottom: 30px;
+}
+.background-white .text span {
+    display: block;
+    font-size: 18px;
+    color: #555555;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.background-white .text.three-text * {
+    margin-bottom: 15px;
+}
+.background-white .blockquote {
+    margin-bottom: 30px;
+}
+.background-white .blockquote p {
+    position: relative;
+    margin-top: 15px;
+    padding-left: 40px;
+}
+.background-white .blockquote p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #5555555c;
+}
+.background-white .preformatted {
+    padding-bottom: 30px;
+}
+.background-white .preformatted pre {
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+.background-white .lists {
+    padding-bottom: 30px;
+}
+.background-white .lists .container .content {
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    gap: 30px;
+}
+@media (max-width: 991px) {
+    .background-white .lists .container .content {
+        grid-template-columns: repeat(1 , 1fr);
+    }
+}
+.background-white .lists .container ul,
+.background-white .lists .container ol {
+    margin-top: 15px;
+    list-style-position: inside;
+}
+.background-white .lists .container .left > *:not(:last-child),
+.background-white .lists .container .right > *:not(:last-child) {
+    margin-bottom: 30px;
+}
+.background-white .lists .container .alternate ul,
+.background-white .lists .container .icons ul {
+    list-style: none;
+}
+.background-white .lists .container ul li:not(:last-child),
+.background-white .lists .container ol li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.background-white .lists .container .alternate ul li:not(:last-child) {
+    position: relative;
+    margin-bottom: 20px;
+}
+.background-white .lists .container .alternate ul li:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 1px;
+    background-color: #5555555c;
+}
+.background-white .lists .container .icons ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.background-white .lists .container .icons ul li:last-child {
+    margin-top: -10px;
+}
+.background-white .actions {
+    padding-bottom: 30px;
+}
+.background-white .actions h2 {
+    margin-bottom: 15px;
+}
+.background-white .actions .container .content {
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    gap: 30px;
+}
+@media (max-width: 991px) {
+    .background-white .actions .container .content {
+        grid-template-columns: repeat(1 , 1fr);
+    }
+}
+.background-white .actions .container .content * .box:not(:last-child) {
+    margin-bottom: 40px;
+}
+.background-white .actions .container .content .right .box button {
+    width: 100%;
+}
+.background-white .actions .container .content .box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.background-white .actions .container .content .box.column {
+    flex-direction: column;
+    align-items: start;
+}
+.background-white .actions .container .content button {
+    padding: 10px 35px;
+}
+.background-white .actions .container .content button.white {
+    color: #000;
+    border: 1px solid #000;
+}
+.background-white .tables {
+    padding-bottom: 30px;
+} 
+.background-white .tables h2 {
+    margin-bottom: 20px;
+}
+.background-white .tables .table table {
+    width: 100%;
+    border-spacing: 0;
+}
+.background-white .tables .table table th,
+.background-white .tables .table table td {
+    padding: 15px;
+    text-align: left;
+}
+.background-white .tables .table table tbody tr:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+.background-white .buttons {
+    padding-bottom: 30px;
+}
+.background-white .buttons h2 {
+    margin-bottom: 20px;
+}
+.background-white .buttons .box {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+.background-white .buttons .box:not(:last-child) {
+    margin-bottom: 40px;
+}
+.background-white .buttons .box.fit button {
+    width: 100%;
+}
+.background-white .buttons .box button.large {
+    padding: 20px 35px;
+}
+.background-white .buttons .box button.white {
+    color: black;
+    border: 1px solid #000;
+}
+/* Start Form */
+.form {
+    padding-bottom: 30px;
+}
+.form h2 {
+    margin-bottom: 20px;
+}
+.form .container > *:not(.buttons) {
+    display: flex;
+    gap: 20px;
+}
+.form .container > .buttons button {
+    width: fit-content;
+    margin-right: 20px;
+}
+.form .container > *:not(:last-child) {
+    margin-bottom: 30px;
+}
+.form .container > * > *{
+    width: 100%;
+}
+.form .container > * input:not([type="radio"]):not([type="checkbox"]),
+.form .container > * select,
+.form .container > * textarea {
+    padding: 15px !important;
+    background-color: #f5f5f5;
+    outline: none;
+    border: none;
+}
+.form .container > * input:not([type="radio"]):not([type="checkbox"]):focus,
+.form .container > * select:focus,
+.form .container > * textarea:focus {
+    border: 2px solid var(--second-background-color);
+}
+.form .radio > div input {
+    appearance: none;
+}
+.form .radio > div label {
+    padding-left: 30px;
+    position: relative;
+    color: var(--main-color-text);
+    font-size: 20px;
+}
+.form .radio > div label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+.form .radio > div label::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 12px;
+    height: 12px;
+    background-color: #000;
+    border-radius: 50%;
+    transition: .3s;
+}
+.form .radio input:checked + label::after {
+    transform: translateY(-50%) scale(1);
+}
+.form .checkbox > div input {
+    appearance: none;
+}
+.form .checkbox > div label {
+    padding-left: 30px;
+    position: relative;
+    color: var(--main-color-text);
+    font-size: 20px;
+}
+.form .checkbox > div label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 2px solid #000;
+}
+.form .checkbox > div label::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 12px;
+    height: 12px;
+    background-color: #000;
+    transition: .3s;
+}
+.form .checkbox input:checked + label::after {
+    transform: translateY(-50%) scale(1);
+}
+.form .container > * textarea {
+    height: 300px;
+}
+/* End Form */
+/* Start Image  */
+.images {
+    padding-bottom: 30px;
+}
+.images h2 {
+    margin-bottom: 20px;
+}
+.images img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.images .package {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+/* End Image  */
+/* Start Left & Right  */
+.left-right {
+    padding-bottom: 30px;
+}
+.left-right h2 {
+    margin-bottom: 20px;
+}
+.left-right .left img {
+    margin: 0 15px 15px 0;
+    float: left;
+    width: 13rem;
+    height: 13rem;
+}
+.left-right .right  {
+    margin-top: 15px;
+}
+.left-right .right img {
+    margin: 0 0 15px 15px;
+    float: right;
+    width: 13rem;
+    height: 13rem;
+}
+/* End Left & Right  */
+/* End Content  */
+/* End Content  */
+
+/* End Elements Page  */

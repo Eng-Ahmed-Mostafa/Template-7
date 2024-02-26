@@ -1,7 +1,6 @@
 let bar = document.querySelector(".bar");
 window.onscroll = function () {
-    if(window.scrollY >= window.innerHeight - 63) {
-        console.log(window.scrollY)
+    if(window.scrollY >= window.innerHeight - 48) {
         bar.classList.add("display");
     }
     else {
@@ -28,10 +27,18 @@ displayMenu.forEach(e => {
 let transformSection = document.querySelectorAll(".landing .transform-section > *");
 transformSection.forEach(e => {
     e.onclick = function() {
-        window.scrollTo({
-            left: 0,
-            top: window.innerHeight - 63,
-            behavior: "smooth"
-        });
+        // window.scrollTo({
+        //     left: 0,
+        //     top: window.innerHeight - 63,
+        //     behavior: "smooth"
+        // });
+        const myInterval = setInterval(function() {
+            if(scrollY < window.innerHeight - 48) {
+                window.scrollBy(0,10);
+            }
+            else {
+                clearInterval(myInterval);
+            }
+        }, 1)
     }
 })
